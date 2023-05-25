@@ -1,0 +1,6 @@
+.block-component {
+  display: flex;
+  border: 2px solid rgb(64, 255, 0);
+  width: 45px;
+  justify-content: center;
+}
