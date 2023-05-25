@@ -1,0 +1,20 @@
+<div class="container">
+  <p class="picture">
+    <img [src] = User.photo [alt] = User.name />
+  </p>
+  <h2>Nom:
+    <span>{{User.name}}</span><br>
+    Prénom:
+    <span>{{User.firstName}}</span>
+  </h2>
+
+<p>{{User.quote}}</p>
+<input [(ngModel)]="User.quote" type="text" placeholder="Salut laisse moi un message">
+
+<h3 [hidden]="!showAge">Age: {{User.age}}</h3>
+
+<button (click) = "hiddenAge()">Afficher/Masquer l'âge</button>
+</div>
+
+
+
