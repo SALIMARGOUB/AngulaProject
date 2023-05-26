@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
+
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { BlockComponentComponent } from './block-component/block-component.compo
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MenuComponent } from './menu/menu.component';
 import { SignupComponent } from './sign-up/signup.component';
+import { UserComponent } from './user/user.component';
+
 
 
 
@@ -21,6 +24,7 @@ import { SignupComponent } from './sign-up/signup.component';
     UserProfileComponent,
     MenuComponent,
     SignupComponent,
+    UserComponent,
 
   ],
   imports: [

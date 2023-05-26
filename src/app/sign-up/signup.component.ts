@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { UserComponent } from '../user/user.component';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-signup',
@@ -6,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+
+  User : UserComponent = new UserComponent();
+   constructor() { }
+
+   onSubmit() {
+     // form submitted
+     console.log(this.User);
+
+   }
 
 }
