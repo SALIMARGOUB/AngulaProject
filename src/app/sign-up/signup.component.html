@@ -1,1 +1,45 @@
-<p>sign-up works!</p>
+<form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+  <div class="form-group">
+    <label for="firstname">First Name</label>
+    <input type="text" class="form-control" id="firstname" name="firstname" required minlength="3" maxlength="15"
+      [(ngModel)]="User.firstname" #firstname="ngModel">
+    <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
+      <div *ngIf="firstname.errors?.['required']">Le prénom est requis</div>
+      <div *ngIf="firstname.errors?.['minlength']">Le prénom doit comporter au moins 3 caractères</div>
+      <div *ngIf="firstname.errors?.['maxlength']">Le prénom ne doit pas dépasser 15 caractères</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="lastname">Last Name</label>
+    <input type="text" class="form-control" id="lastname" name="lastname" required minlength="3" maxlength="15"
+      [(ngModel)]="User.lastname" #lastname="ngModel">
+    <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
+      <div *ngIf="lastname.errors?.['required']">Le nom est requis</div>
+      <div *ngIf="lastname.errors?.['minlength']">Le nom doit comporter au moins 3 caractères</div>
+      <div *ngIf="lastname.errors?.['maxlength']">Le nom ne doit pas dépasser 15 caractères</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" name="email" required email [(ngModel)]="User.email"
+      #email="ngModel">
+    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+      <div *ngIf="email.errors?.['required']">L'email est requis</div>
+      <div *ngIf="email.errors?.['email']">L'email est invalide</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="User.password" minlength="12"
+      #password="ngModel">
+  </div>
+  <div *ngIf="password.invalid && (password.dirty || password.touched)">
+    <div  *ngIf="password.errors?.['minlength']">12 caractères minimum pour le password</div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Inscription</button>
+</form>
